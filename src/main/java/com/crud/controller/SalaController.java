@@ -32,7 +32,7 @@ public class SalaController {
 		return salaServiceImpl.listarSalas();
 	}
 	
-	@GetMapping("/salas/{id}")
+	@GetMapping("/salas/{codigo}")
 	public Sala salaPorId(@PathVariable(name="codigo") Long id) {
 		Sala salaPorId = new Sala();
 		salaPorId = salaServiceImpl.salaPorId(id);
@@ -40,7 +40,7 @@ public class SalaController {
 		return salaPorId;
 	}	
 	
-	@PutMapping("/salas/{id}")
+	@PutMapping("/salas/{codigo}")
 	public Sala actualizarSala(@PathVariable(name="codigo") Long id, @RequestBody Sala sala) {
 		Sala salaSeleccionado = new Sala();
 		Sala salaActualizado = new Sala();
@@ -55,7 +55,7 @@ public class SalaController {
 		return salaActualizado;
 	}
 	
-	@DeleteMapping("/salas/{id}")
+	@DeleteMapping("/salas/{codigo}")
 	public void borrarSala(@PathVariable(name="codigo") Long id) {
 		salaServiceImpl.borrarSala(id);
 	}
